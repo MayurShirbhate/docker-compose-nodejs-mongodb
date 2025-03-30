@@ -36,7 +36,8 @@ jobs:
         run: |
           docker-compose build
           docker images
-          docker push ${{ secrets.DOCKER_USERNAME }}/docker-compose-nodejs-mongodb-app:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/docker-compose-nodejs-mongodb_app:latest
        #   docker build -t ${{ secrets.DOCKER_USERNAME }}/docker-compose build:latest -f Dockerfile .
+       
           
       
