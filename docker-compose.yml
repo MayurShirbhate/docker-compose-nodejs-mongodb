@@ -13,6 +13,7 @@ services:
     volumes:
       - db:/data/db
   app:
+    image: docker-compose-nodejs-mongodb-app:latest
     depends_on:
       - mongodb
     build: ./bezkoder-app
