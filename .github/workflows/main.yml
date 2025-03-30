@@ -24,6 +24,8 @@ jobs:
 
       - name: Build and push Node.js image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/docker-compose-nodejs-mongodb-app:latest -f Dockerfile .
-          docker push ${{ secrets.DOCKER_USERNAME }}/docker-compose-nodejs-mongodb-app:latest
+          docker-compose build
+          docker images
+       #   docker build -t ${{ secrets.DOCKER_USERNAME }}/docker-compose build:latest -f Dockerfile .
+       #   docker push ${{ secrets.DOCKER_USERNAME }}/docker-compose-nodejs-mongodb-app:latest
 
