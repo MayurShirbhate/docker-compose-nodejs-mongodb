@@ -61,7 +61,7 @@ jobs:
 
       - name: Run docker-compose on EC2
         run: |
-          ssh -i ~/.ssh/id_ed25519 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
+          ssh -i ~/.ssh/id_ed25519 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << EOF
             cd ~/docker-compose-nodejs-mongodb
             docker-compose down || true
             docker-compose pull || true
