@@ -50,5 +50,9 @@ jobs:
           echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/id_ed25519.pub
+
+      - name: Copy project files to EC2
+        run: |
+          rsync -az -e "ssh -i ~/.ssh/id_ed25519" ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/home/${{ secrets.SERVER_USER }}/app
           
       
