@@ -53,9 +53,10 @@ jobs:
 
       - name: Copy project files to EC2
         run: |
-          rsync -az -e "ssh -i ~/.ssh/id_ed25519" ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/home/${{ secrets.SERVER_USER }}/docker-compose-nodejs-mongodb
+          rsync -i /.ssh/id_ed25519 -r * ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/docker-compose-nodejs-mongodb/
+        #  rsync -az -e "ssh -i ~/.ssh/id_ed25519" ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/home/${{ secrets.SERVER_USER }}/docker-compose-nodejs-mongodb
         #  ssh -i ~/.ssh/id_ed25519 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "rm -rf ~/docker-compose-nodejs-mongodb && mkdir -p ~/docker-compose-nodejs-mongodb"
-        #  scp -i /.ssh/id_ed25519 -r * ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/docker-compose-nodejs-mongodb/
+          
         # rsync -azv -e "ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_ed25519" ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/home/${{ secrets.SERVER_USER }}/docker-compose-nodejs-mongodb
         # rsync -az -e "ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_ed25519" ./ \ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/home/${{ secrets.SERVER_USER }}/docker-compose-nodejs-mongodb --progress
 
