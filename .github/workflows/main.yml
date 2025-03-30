@@ -49,9 +49,9 @@ jobs:
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
-          password: ${{ secrets.SERVER_PASSWORD }}
-          script: |
-            docker pull DOCKER_USERNAME_REPO/docker-compose-nodejs-mongodb-app:latest
-       
+          password: ${{ secrets.SERVER_PASSWORD }}  # Ensure this is correctly set in GitHub Secrets
+         # script: |
+          #  docker pull ${{ secrets.DOCKER_USERNAME }}/docker-compose-nodejs-mongodb-app:latest
+          # docker-compose up -d
           
       
