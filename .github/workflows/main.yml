@@ -37,7 +37,7 @@ jobs:
           docker-compose build
           docker images
           docker tag docker-compose-nodejs-mongodb-app:latest ${{ secrets.DOCKER_USERNAME_REPO }}/docker-compose-nodejs-mongodb:latest
-       #   docker push ${{ secrets.DOCKER_USERNAME_REPO }}/docker-compose-nodejs-mongodb:latest
+          docker push ${{ secrets.DOCKER_USERNAME_REPO }}/docker-compose-nodejs-mongodb:latest
 
           
        #   docker tag docker-compose-nodejs-mongodb-app:latest $DOCKER_USERNAME_REPO/docker-compose-nodejs-mongodb:latest
