@@ -40,7 +40,7 @@ jobs:
           docker push ${{ secrets.DOCKER_USERNAME_REPO }}/docker-compose-nodejs-mongodb:latest
 
           
-deploy:
+  deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
